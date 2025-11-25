@@ -14,13 +14,13 @@ public class MonedaController {
     @Autowired
     private MonedaService monedaService;
 
-    // ⭐ LISTAR TODAS
+    // LISTAR TODAS
     @GetMapping
     public List<Moneda> listar() {
         return monedaService.listar();
     }
 
-    // ⭐ BUSCAR POR ID COMPUESTO
+    // BUSCAR POR ID COMPUESTO
     @GetMapping("/{numCia}/{claveMoneda}")
     public Moneda buscar(
             @PathVariable Integer numCia,
@@ -29,19 +29,19 @@ public class MonedaController {
         return monedaService.buscar(numCia, claveMoneda);
     }
 
-    // ⭐ GUARDAR (INSERT)
+    // GUARDAR (INSERT)
     @PostMapping
     public Moneda guardar(@RequestBody Moneda moneda) {
         return monedaService.guardar(moneda);
     }
 
-    // ⭐ ACTUALIZAR
+    // ACTUALIZAR
     @PutMapping
     public Moneda actualizar(@RequestBody Moneda moneda) {
         return monedaService.actualizar(moneda);
     }
 
-    // ⭐ ELIMINAR
+    // ELIMINAR
     @DeleteMapping("/{numCia}/{claveMoneda}")
     public String eliminar(
             @PathVariable Integer numCia,
